@@ -9,7 +9,10 @@ app.controller('MainController', function($scope, $http) {
      * Login
      */
     $scope.login = {
+        button: false,
         submit: function() {
+            $scope.login.button = true;
+
             $http({
                 method: 'POST',
                 url: '/login',
@@ -24,8 +27,11 @@ app.controller('MainController', function($scope, $http) {
                 } else {
                     alert('erro ao logar');
                 }
+
+                $scope.login.button = false;
             })
             .error(function() {
+                $scope.login.button = false;
                 alert('erro ao logar');
             });
         }

@@ -23,7 +23,11 @@
         <form class="sign-in" ng-submit="login.submit()" ng-show="!storage.getItem('is_logged')">
             <input type="text" name="username" class="input" placeholder="usuário" required="required" ng-model="login.username">
             <input type="password" name="password" class="input" placeholder="senha" required="required" ng-model="login.password">
-            <button type="submit" class="btn blue">Entrar</button>
+            <button type="submit" class="btn blue" ng-disabled="login.button">
+                <span ng-show="login.button == false"><i class="fa fa-sign-in fa-fw"></i></span>
+                <span ng-show="login.button == true"><i class="fa fa-spinner fa-spin fa-fw"></i></span>
+                Entrar
+            </button>
         </form>
 
         <ul class="nav" ng-show="storage.getItem('is_logged') != null">
