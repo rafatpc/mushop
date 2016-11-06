@@ -1,4 +1,5 @@
-app.config(function($routeProvider) {
+app.config(function($routeProvider, $httpProvider) {
+    $httpProvider.defaults.headers.common['X-CSRF-TOKEN'] = $('meta[name="csrf-token"]').attr('content');
     $routeProvider
     .when("/", {
         templateUrl : "/views/home.html",

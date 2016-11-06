@@ -14,3 +14,5 @@
 Route::get('/', ['as' => 'web.home', function() {
     return view('index');
 }]);
+
+Route::post('/login', ['web.account.login', 'uses' => 'Account\AccountController@login']);
