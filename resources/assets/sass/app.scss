@@ -1,9 +1,30 @@
 
 // Fonts
-@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,600);
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css);
 
-// Variables
-@import "variables";
+// Body
+body {
+    font-size: 14px;
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+}
 
-// Bootstrap
-@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+.input {
+    border-radius: 4px;
+    padding: 0.6rem;
+    margin-right: 0.5rem;
+    border: none;
+    outline: none;
+}
+
+.btn {
+    border-radius: 4px;
+    padding: 0.6rem 1rem;
+    border: none;
+    outline: none;
+}
+
+// Header
+@import "header/header";
