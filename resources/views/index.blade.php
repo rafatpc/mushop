@@ -20,7 +20,7 @@
             <a href="#/">mushop</a>
         </div>
 
-        <form class="sign-in" ng-submit="login.submit()" ng-show="!storage.getItem('is_logged')">
+        <form class="sign-in" ng-submit="login.submit()" ng-show="!storage.getItem('is_logged')" autocomplete="off">
             <input type="text" name="username" class="input" placeholder="usuário" required="required" ng-model="login.username">
             <input type="password" name="password" class="input" placeholder="senha" required="required" ng-model="login.password">
             <button type="submit" class="btn blue" ng-disabled="login.button">
