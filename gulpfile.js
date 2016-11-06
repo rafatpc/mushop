@@ -14,6 +14,10 @@ const elixir = require('laravel-elixir');
 elixir((mix) => {
     mix .sass('app.scss');
 
+    mix .styles([
+        './node_modules/sweetalert/dist/sweetalert.css'
+    ], 'public/css/vendor.css');
+
     mix .scripts([
         'app.js',
         'route.js',
@@ -22,5 +26,6 @@ elixir((mix) => {
 
     mix .copy('node_modules/jquery/dist/jquery.min.js', 'public/js/vendor/')
         .copy('node_modules/angular/*.min.js', 'public/js/vendor/')
-        .copy('node_modules/angular-route/*.min.js', 'public/js/vendor/');
+        .copy('node_modules/angular-route/*.min.js', 'public/js/vendor/')
+        .copy('node_modules/sweetalert/dist/*.min.js', 'public/js/vendor/');
 });

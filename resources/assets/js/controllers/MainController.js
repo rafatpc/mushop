@@ -25,14 +25,14 @@ app.controller('MainController', function($scope, $http) {
                     $scope.storage.setItem('api_token', data.username.api_token);
                     $scope.storage.setItem('is_logged', true);
                 } else {
-                    alert('erro ao logar');
+                    swal("Error", "Não foi possivel fazer login. Tente novamente!", "error");
                 }
 
                 $scope.login.button = false;
             })
             .error(function() {
                 $scope.login.button = false;
-                alert('erro ao logar');
+                swal("Error", "Não foi possivel fazer login. Tente novamente!", "error");
             });
         }
     }

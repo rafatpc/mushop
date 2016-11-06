@@ -8,6 +8,7 @@
     <title>mushop - UTPSoftwares</title>
 
     <link rel="stylesheet" href="{{ asset('/css/app.css') }}" media="screen">
+    <link rel="stylesheet" href="{{ asset('/css/vendor.css') }}" media="screen">
 
     <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -64,6 +65,7 @@
     <script type="text/javascript" src="{{ asset('js/vendor/jquery.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/vendor/angular.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/vendor/angular-route.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/vendor/sweetalert.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/app.js') }}"></script>
 </body>
 </html>
