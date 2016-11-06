@@ -8,17 +8,18 @@ app.controller('MainController', function($scope) {
     /**
      * Login
      */
-    $scope.username;
-    $scope.password;
-
-    $scope.login = function() {
-        $scope.storage.setItem('is_logged', true);
+    $scope.login = {
+        submit: function() {
+            $scope.storage.setItem('is_logged', true);
+        }
     }
 
 });
 
 app.controller('LogoutController', function($scope, $location) {
 
+    $scope.login.username = '';
+    $scope.login.password = '';
     $scope.storage.removeItem('is_logged');
     $location.path('/');
 

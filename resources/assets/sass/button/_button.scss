@@ -1,6 +1,46 @@
 .btn {
     border-radius: 4px;
     padding: 0.6rem 1rem;
-    border: none;
+    border: 1px solid transparent;
     outline: none;
+    cursor: pointer;
+
+    &.white {
+        background-color: #ffffff;
+        border-color: #ecf0f1;
+
+        &:hover {
+            background-color: darken(#ffffff, 5%);
+        }
+    }
+
+    &.blue {
+        color: #ffffff;
+        background-color: #2980b9;
+        border-color: #3498db;
+
+        &:hover {
+            background-color: darken(#2980b9, 5%);
+        }
+    }
+
+    &.red {
+        color: #ffffff;
+        background-color: #c0392b;
+        border-color: #e74c3c;
+
+        &:hover {
+            background-color: darken(#c0392b, 5%);
+        }
+    }
+
+    &.green {
+        color: #ffffff;
+        background-color: #27ae60;
+        border-color: #2ecc71;
+
+        &:hover {
+            background-color: darken(#27ae60, 5%);
+        }
+    }
 }

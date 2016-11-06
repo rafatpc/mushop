@@ -19,17 +19,26 @@
             <a href="#/">mushop</a>
         </div>
 
-        <form class="sign-in" ng-submit="login()" ng-show="!storage.getItem('is_logged')">
-            <input type="text" name="username" class="input" placeholder="usuário" ng-model="username">
-            <input type="password" name="password" class="input" placeholder="senha" ng-model="password">
-            <button type="submit" class="btn">Entrar</button>
+        <form class="sign-in" ng-submit="login.submit()" ng-show="!storage.getItem('is_logged')">
+            <input type="text" name="username" class="input" placeholder="usuário" required="required" ng-model="login.username">
+            <input type="password" name="password" class="input" placeholder="senha" required="required" ng-model="login.password">
+            <button type="submit" class="btn blue">Entrar</button>
         </form>
 
-        <ul class="nav" ng-show="storage.getItem('is_logged')">
-            <li><a href="#/store">Items</a></li>
+        <ul class="nav" ng-show="storage.getItem('is_logged') != null">
+            <li><a href="#/">
+                <i class="fa fa-home"></i>
+                Início
+            </a></li>
+
+            <li><a href="#/store">
+                <i class="fa fa-shopping-cart"></i>
+                Shopping
+            </a></li>
+
             <li class="profile">
-                Vitor Leonel
                 <i class="fa fa-caret-square-o-down"></i>
+                Vitor Leonel
 
                 <ul class="profile-menu">
                     <li><a href="#/account">Minha conta</a></li>
