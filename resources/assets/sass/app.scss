@@ -11,20 +11,8 @@ body {
     padding: 0;
 }
 
-.input {
-    border-radius: 4px;
-    padding: 0.6rem;
-    margin-right: 0.5rem;
-    border: none;
-    outline: none;
-}
-
-.btn {
-    border-radius: 4px;
-    padding: 0.6rem 1rem;
-    border: none;
-    outline: none;
-}
-
-// Header
+// Imports
+@import "input/input";
+@import "button/button";
 @import "header/header";
+@import "main/main";

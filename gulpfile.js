@@ -13,7 +13,12 @@ const elixir = require('laravel-elixir');
 
 elixir((mix) => {
     mix .sass('app.scss');
-    //    .webpack('app.js');
+
+    mix .scripts([
+        'app.js',
+        'route.js',
+        'controllers/*.js'
+    ], 'public/js/app.js');
 
     mix .copy('node_modules/jquery/dist/jquery.min.js', 'public/js/vendor/')
         .copy('node_modules/angular/*.min.js', 'public/js/vendor/')

@@ -11,6 +11,6 @@
 |
 */
 
-Route::get('/', function () {
+Route::get('/', ['as' => 'web.home', function() {
     return view('index');
-});
+}]);

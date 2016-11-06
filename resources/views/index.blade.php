@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR" ng-app="mushop">
+<html lang="pt-BR" ng-app="mushop" ng-controller="MainController">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -16,32 +16,40 @@
 <body>
     <header class="header">
         <div class="logo">
-            <a href="#">mushop</a>
+            <a href="#/">mushop</a>
         </div>
 
-        @if(!isset($_GET['user']))
-        <form class="sign-in" action="#" method="post">
-            <input type="text" name="username" class="input" placeholder="usuário">
-            <input type="text" name="password" class="input" placeholder="senha">
-            <button type="button" class="btn">Entrar</button>
+        <form class="sign-in" ng-submit="login()" ng-show="!storage.getItem('is_logged')">
+            <input type="text" name="username" class="input" placeholder="usuário" ng-model="username">
+            <input type="password" name="password" class="input" placeholder="senha" ng-model="password">
+            <button type="submit" class="btn">Entrar</button>
         </form>
-        @else
-        <ul class="nav">
+
+        <ul class="nav" ng-show="storage.getItem('is_logged')">
+            <li><a href="#/store">Items</a></li>
             <li class="profile">
                 Vitor Leonel
                 <i class="fa fa-caret-square-o-down"></i>
 
                 <ul class="profile-menu">
-                    <li><a href="#">Minha conta</a></li>
-                    <li><a href="#">Sair</a></li>
+                    <li><a href="#/account">Minha conta</a></li>
+                    <li><a href="#/logout">Sair</a></li>
                 </ul>
             </li>
         </ul>
-        @endif
     </header><!-- end header -->
+
+    <main class="main ng-view">
+        carregando...
+    </main><!-- end main -->
+
+    <footer class="footer">
+
+    </footer><!-- end footer -->
 
     <script type="text/javascript" src="{{ asset('js/vendor/jquery.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/vendor/angular.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/vendor/angular-route.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/app.js') }}"></script>
 </body>
 </html>

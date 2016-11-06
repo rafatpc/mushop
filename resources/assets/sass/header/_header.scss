@@ -54,7 +54,6 @@
                     padding: 0;
                     position: absolute;
                     right: 0;
-                    z-index: -1;
                     display: none;
 
                     li {
@@ -72,7 +71,7 @@
                     background-color: #27ae60;
 
                     .profile-menu {
-                        display: block;
+                        display: block !important;
                     }
                 }
             }
